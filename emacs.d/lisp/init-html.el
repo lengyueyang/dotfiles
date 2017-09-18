@@ -20,8 +20,11 @@
   (progn
     (setq web-mode-markup-indent-offset 2)
     (setq web-mode-enable-auto-closing t) ; enable auto close tag in text-mode
-    (setq web-mode-enable-current-element-highlight nil)
+    ;; (setq web-mode-enable-current-element-highlight t)
+    ;; (custom-set-faces
+    ;;  '(web-mode-current-element-highlight-face ((t (:foreground "#000" :background "#a6e22e")))))
     (setq web-mode-enable-auto-indentation nil)
+    (setq web-mode-enable-control-block-indentation nil)
     (setq web-mode-enable-css-colorization nil)
     ;; see https://github.com/fxbois/web-mode/issues/275
     ;; (setq web-mode-enable-auto-pairing nil)
@@ -48,6 +51,7 @@
     (maple/add-to-company-backend '(company-web-html
                                     company-css
                                     company-tern) 'web-mode-hook)
+
     (evil-define-key 'normal web-mode-map
       (kbd "<f5>") 'browse-url-of-file
       ;; (kbd "<f6>") 'web-beautify-html

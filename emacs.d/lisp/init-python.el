@@ -72,8 +72,7 @@
       (evil--jumps-push))
     (evil-define-key 'normal anaconda-mode-map
       (kbd "gd") 'anaconda-mode-find-assignments)
-    (evil-define-key 'normal anaconda-mode-view-mode-map
-      (kbd "q") 'quit-window)
+    (maple/set-quit-key anaconda-mode-view-mode-map)
     ))
 
 

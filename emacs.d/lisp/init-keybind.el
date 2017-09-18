@@ -20,7 +20,7 @@
   )
 
 (evil-leader/set-key
-  "cc" 'comment-or-uncomment-region-or-line
+  "cc" 'maple/comment-or-uncomment-region-or-line
   "ch" 'hide/show-comments-toggle ;;显示隐藏注释
   "/" 'helm-do-ag-this-file ;;当前文件内容
   "u"  'undo-tree-visualize
@@ -217,7 +217,11 @@
 (define-key evil-normal-state-map (kbd "H") (kbd "^"))
 (define-key evil-normal-state-map (kbd "L") (kbd "$"))
 (define-key evil-visual-state-map (kbd "H") (kbd "^"))
-(define-key evil-visual-state-map (kbd "L") (kbd "$"))
+;; (define-key evil-visual-state-map (kbd "L") (kbd "$"))
+(define-key evil-visual-state-map (kbd "L")
+  (lambda ()
+    (interactive)
+    (evil-end-of-line)))
 ;; (define-key evil-normal-state-map (kbd "RET") 'maple/evil-insert-line-below)
 (define-key evil-normal-state-map (kbd "S-<return>") 'maple/evil-insert-line-above)
 (define-key evil-visual-state-map (kbd "<")
@@ -233,6 +237,7 @@
     (evil-normal-state)
     (evil-visual-restore)))
 
+(global-set-key [f6] 'maple/indent-buffer)
 ;; (global-set-key (kbd "C-a") 'maple/smart-move-beginning-of-line)
 ;; (global-set-key (kbd "C-e") 'maple/backward-kill-word-or-region)
 (provide 'init-keybind)

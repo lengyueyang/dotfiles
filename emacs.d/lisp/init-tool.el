@@ -29,9 +29,11 @@
     (setq blog-admin-backend-new-post-in-drafts t) ;; create new post in drafts by default
     (setq blog-admin-backend-new-post-with-same-name-dir nil) ;; create same-name directory with new post
     (setq blog-admin-backend-path "~/git/pelican")
-    (setq blog-admin-backend-pelican-config-file "pelicanconf.py") ;; default assumes _config.ym
-    (setq blog-admin-backend-pelican-posts-dir "content/org") ;; default assumes _config.ym
-    (setq blog-admin-backend-pelican-drafts-dir "content/draft") ;; default assumes _config.ym
+    (setq blog-admin-backend-pelican-config-file "pelicanconf.py")
+    (setq blog-admin-backend-pelican-posts-dir "content/org")
+    (setq blog-admin-backend-pelican-org-mode-dir "content/org")
+    (setq blog-admin-backend-pelican-markdown-dir "content/markdown")
+    (setq blog-admin-backend-pelican-drafts-dir "content/draft")
     (add-hook 'blog-admin-backend-after-new-post-hook 'find-file)
 
     (defun blog-set-face()

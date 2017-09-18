@@ -17,6 +17,7 @@
     (fset 'evil-visual-update-x-selection 'ignore) ;;粘贴板
     (evil-set-initial-state 'image-mode 'emacs)
     (evil-set-initial-state 'inferior-python-mode 'emacs)
+    (evil-set-initial-state 'anaconda-mode-view-mode 'emacs)
 
     (add-hook 'view-mode-hook #'evil-emacs-state)
 

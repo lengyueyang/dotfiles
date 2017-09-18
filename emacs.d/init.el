@@ -4,7 +4,7 @@
 ;;; Without this comment emacs25 adds (package-initialize) here
 ;; (package-initialize); You may delete these explanatory comments.
 
-(defconst *at_home* nil)
+(defconst *at_home* t)
 
 (let ((file-name-handler-alist nil))
   (setq gc-cons-threshold (* 128 1024 1024))

@@ -171,8 +171,7 @@
   :config
   (progn
     ;; 高亮括号配对
-    (show-paren-mode 1)
-    )
+    (show-paren-mode 1))
   :diminish rainbow-delimiters-mode)
 
 ;; 颜色
