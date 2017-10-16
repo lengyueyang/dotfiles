@@ -43,12 +43,11 @@
   :defer t
   ;; 保存时自动格式化
   ;; :init (add-hook 'python-mode-hook 'yapf-mode)
+  :after evil
   :init
   (progn
-    (after-load 'evil
-      (evil-define-key 'normal python-mode-map
-        (kbd "<f6>") 'yapfify-buffer)
-      )
+    (evil-define-key 'normal python-mode-map
+      (kbd "<f6>") 'yapfify-buffer)
     ))
 
 (use-package pyvenv

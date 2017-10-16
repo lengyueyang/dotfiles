@@ -1,7 +1,11 @@
 (use-package monokai-theme
   :ensure t
-  :defer t
-  :init (add-hook 'after-init-hook (lambda () (load-theme 'monokai t))))
+  :defer t)
+  ;; :init (add-hook 'after-init-hook (lambda () (load-theme 'monokai t))))
+
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
+  :defer t)
 
 (use-package spacemacs-theme
   :ensure t
@@ -13,11 +17,7 @@
   :defer t)
 ;; :init (add-hook 'after-init-hook (lambda () (load-theme 'doom-monokai t))))
 
-;; (use-package doom-theme
-;;   :ensure t
-;;   :disabled
-;;   :defer t
-;;   :init (add-hook 'after-init-hook (lambda () (load-theme 'doom-monokai t))))
+(add-hook 'after-init-hook (lambda () (load-theme user-default-theme t)))
 
 ;; (use-package color-theme-approximate
 ;;   :ensure t
@@ -65,8 +65,9 @@
   :config
   (progn
     ;; (setq maple-cycle-themes (mapcar 'symbol-name (custom-available-themes)))
-    (setq maple-cycle-themes (delete "doom-one-light"
-                                     (mapcar 'symbol-name (custom-available-themes))))
+    ;; (setq maple-cycle-themes (delete "doom-one-light"
+    ;;                                  (mapcar 'symbol-name (custom-available-themes))))
+    (setq maple-cycle-themes '("monokai" "spacemacs-dark" "sanityinc-tomorrow-day" "doom-molokai" "doom-one"))
     (defun maple/cycle-theme (num)
       (interactive)
       (setq maple-current-theme-index
@@ -196,6 +197,11 @@
       (add-hook hook 'highlight-symbol-mode)
       (add-hook hook 'highlight-symbol-nav-mode))
     (add-hook 'org-mode-hook 'highlight-symbol-nav-mode)))
+
+;; (use-package col-highlight
+;;   :defer t
+;;   :init (add-hook 'after-init-hook #'column-highlight-mode)
+;;   :config (set-face-background col-highlight-face "#3c3d37"))
 
 ;; 显示缩进
 ;; (use-package highlight-indentation

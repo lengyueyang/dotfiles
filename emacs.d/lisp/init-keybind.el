@@ -28,6 +28,8 @@
   "=" 'maple/indent-buffer
   "se" 'evil-mc-make-all-cursors
   "ss" 'replace-regexp
+  "sd" 'delete-matching-lines
+  "sD" 'delete-non-matching-lines
   "sj" 'helm-semantic-or-imenu
   "sp" 'flyspell-correct-word-generic
   "sh" 'shell-command

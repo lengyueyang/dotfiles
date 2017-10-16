@@ -12,10 +12,9 @@
 (use-package quickrun
   :ensure t
   :defer t
-  :init
+  :config
   (progn
-    (after-load 'evil
-      (evil-set-initial-state 'quickrun--mode 'emacs))
+    (maple/set-quit-key quickrun--mode-map)
     (add-hook 'quickrun--mode-hook
               (lambda () (toggle-truncate-lines t)))
     ))
@@ -78,14 +77,9 @@
   :defer t
   :config
   (progn
-    ;; (evil-set-initial-state 'youdao-dictionary-mode 'emacs)
     (maple/set-quit-key youdao-dictionary-mode-map)
-    ;; (evil-define-key 'normal youdao-dictionary-mode-map
-    ;;   (kbd "q") 'quit-window)
     (setq url-automatic-caching t
-          ;; Set file path for saving search history
           youdao-dictionary-search-history-file (concat maple-cache-directory "youdao")
-          ;; Enable Chinese word segmentation support
           youdao-dictionary-use-chinese-word-segmentation t))
   )
 ;; (use-package cal-china-x

@@ -10,6 +10,7 @@
   (setq gc-cons-threshold (* 128 1024 1024))
   (setq user-full-name "jianglin")
   (setq user-mail-address "lin.jiang@upai.com")
+  (setq user-default-theme 'monokai)
   (when *at_home*
     (setq user-mail-address "xiyang0807@gmail.com"))
   (setq inhibit-startup-echo-area-message "jianglin")

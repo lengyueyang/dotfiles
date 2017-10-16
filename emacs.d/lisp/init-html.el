@@ -52,10 +52,17 @@
                                     company-css
                                     company-tern) 'web-mode-hook)
 
-    (evil-define-key 'normal web-mode-map
-      (kbd "<f5>") 'browse-url-of-file
-      ;; (kbd "<f6>") 'web-beautify-html
-      (kbd "za") 'web-mode-fold-or-unfold)))
+    ;; (evil-define-key 'normal web-mode-map
+    ;;   (kbd "<f5>") 'browse-url-of-file
+    ;;   ;; (kbd "<f6>") 'web-beautify-html
+    ;;   (kbd "za") 'web-mode-fold-or-unfold)
+    )
+  :evil-bind
+  (normal web-mode-map
+          (kbd "<f5>") 'browse-url-of-file
+          ;; (kbd "<f6>") 'web-beautify-html
+          (kbd "za") 'web-mode-fold-or-unfold)
+  )
 
 (use-package web-beautify
   :ensure t

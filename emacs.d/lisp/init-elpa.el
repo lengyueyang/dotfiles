@@ -82,7 +82,12 @@ locate PACKAGE."
                 (package-delete  old-package)))))
       (message "All packages are up to date"))))
 
+
 (require-package 'use-package)
+
+(use-package use-package-extension
+  :after use-package
+  :load-path "site-lisp/use-package/")
 
 (use-package package-utils
   :ensure t
@@ -99,7 +104,7 @@ locate PACKAGE."
 (use-package restart-emacs
   :ensure t
   :defer t)
-  ;; :config (setq restart-emacs-restore-frames t))
+;; :config (setq restart-emacs-restore-frames t))
 
 ;;; Fire up package.el
 

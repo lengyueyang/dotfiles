@@ -55,11 +55,10 @@
   :defer t
   ;; (global-evil-surround-mode 1)
   :init (add-hook 'after-init-hook #'global-evil-surround-mode)
-  :config
-  (progn
-    (evil-define-key 'visual evil-surround-mode-map "s" 'evil-surround-region)
-    (evil-define-key 'visual evil-surround-mode-map "S" 'evil-substitute)
-    ))
+  :evil-bind
+  (visual evil-surround-mode-map
+          "s" 'evil-surround-region
+          "S" 'evil-substitute))
 
 (use-package evil-matchit
   :ensure t
